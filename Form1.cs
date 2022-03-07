@@ -74,14 +74,6 @@ namespace LabRepaso1
             }            
         }
 
-        private void guardar(string fileNombre, string texto)
-        {
-            FileStream stream = new FileStream(fileNombre, FileMode.OpenOrCreate, FileAccess.Write);
-            StreamWriter writer = new StreamWriter(stream);
-            writer.WriteLine(texto);
-            stream.Close();
-        }
-
         private void leer(string fileNombre)
         {
             FileStream stream = new FileStream(fileNombre, FileMode.Open, FileAccess.Read);
