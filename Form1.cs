@@ -111,7 +111,18 @@ namespace LabRepaso1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            String empleadoSueldo = comboBox1.SelectedItem.ToString();
+            for (int i = 0; i < sueldos.Count; i++)
+            {
+                Sueldo sueldotemp = new Sueldo();
+                if (empleadoSueldo == "empleado: " + sueldos[i].nombre)
+                {
+                    sueldotemp.numeroEmpleado = sueldos[i].numeroEmpleado;
+                    sueldotemp.nombre = sueldos[i].nombre;
+                    sueldotemp.sueldoMes = sueldos[i].sueldoMes;
+                    MessageBox.Show("No.Empleado: " + sueldotemp.numeroEmpleado + "\nNombre: " + sueldotemp.nombre + "\nSueldo: " + sueldotemp.sueldoMes);
+                }
+            }
         }
 
         private void cargarComboBox()
@@ -130,6 +141,8 @@ namespace LabRepaso1
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBox2.SelectedIndex = 1;
+            leer("Enero.txt");
+            mostar("Enero.txt");
         }
     }
 }
